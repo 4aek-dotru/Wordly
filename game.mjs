@@ -81,10 +81,10 @@ export default class Game {
     }
 
     checkRow() {
+        let wordInStroke;
         setTimeout(() =>{
             this.isChecking = true;
             const WORDS = SETTINGS['WORDS'];
-            let wordInStroke;
             for(let i = 0; i < 5; i++) {
                 const checkedTd = document.querySelector(`td[data-x='${i}'][data-y='${this.Y}']`);
                 checkedTd.classList.add('check')
@@ -113,6 +113,11 @@ export default class Game {
                     checkedTd.classList.remove('check')
                 }
                 this.isChecking = false;
+                console.log('дошло')
+                if(wordInStroke === this.WORD) {
+                    console.log('совпадает')
+                    document.getElementById('end-game-contaner').style.display = 'flex';
+                }
             }, 600)
 
         }, 100)
