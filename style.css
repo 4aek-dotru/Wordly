@@ -97,7 +97,7 @@ main {
     justify-content: space-around;
     align-items: center;
 }
-#keyboard > button > img {
+#keyboard > div > button > img {
     width: 40px;
 }
 #game-field > tbody {
@@ -141,16 +141,26 @@ main {
     display: flex;
     flex-wrap: wrap;
     width: 700px;
-    height: 180px;
     align-items: center;
     justify-content: center;
     background: #818384;
     border-radius: 20px;
     padding: 20px;
     gap: 5px;
-    
 }
-#keyboard > button {
+#first-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between !important;
+}
+#keyboard > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+#keyboard > div >button {
     display: flex;
     justify-content: center;
     align-items: center;

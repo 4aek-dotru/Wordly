@@ -1,5 +1,5 @@
 const SETTINGS = {
-    "WORDS": ["АБЗАЦ", "АВАНС", "АВТОР", "АГЕНТ", "АДРЕС", "АЗАРТ", "АКТЕР", "АКЦИЯ", "АЛМАЗ", "АМБАР", "АНГЕЛ", "АРБУЗ", "АРЕНА", "АРЕСТ", "АРХИВ", "БАЗАР", "БАЙКА", "БОКАЛ", "БАЛЕТ", "БАЛКА", "БАНКА", "БАРАН"],
+    "WORDS": ["ШЛЮХА", "НИГЕР", "ТВАРЬ", "МРАЗЬ", "АБЗАЦ", "АВАНС", "АВТОР", "АГЕНТ", "АДРЕС", "АЗАРТ", "АКТЕР", "АКЦИЯ", "АЛМАЗ", "АМБАР", "АНГЕЛ", "АРБУЗ", "АРЕНА", "АРЕСТ", "АРХИВ", "БАЗАР", "БАЙКА", "БОКАЛ", "БАЛЕТ", "БАЛКА", "БАНКА", "БАРАН"],
     "KEYBOARD": {
         "А": "KeyF",
         "Б": "Comma",
@@ -43,13 +43,19 @@ export default class Game {
     X = -1;
     Y = 0;
     isChecking = 0;
-
+    BUTTONS = document.querySelectorAll('#keyboard > div > button');
     constructor(){
         this.generateWord();
+        this.BUTTONS.forEach(button => {
+            button.addEventListener('click', e => {
+                if(this.isChecking) return;
+                this.processingKey(button.innerHTML, button.dataset.value)
+            })
+        })
         document.addEventListener('keydown', e => {
             if(this.isChecking) return;
             const currentLetter = Object.keys(SETTINGS['KEYBOARD']).find(key => SETTINGS['KEYBOARD'][key] === e.code);
-            this.processingKey(currentLetter, e);
+            this.processingKey(currentLetter, e.code);
         })
     }
 
@@ -57,13 +63,12 @@ export default class Game {
         const Words = SETTINGS['WORDS'];
         const randomNumber = Math.floor((Math.random() * (Words.length - 1)) + 1)
         this.WORD = Words[randomNumber];
-        console.log(Words)
     }
 
     processingKey(letter, event) {
         if(letter == undefined) return;
         if(letter == 'Ё') letter = 'Е';
-        if(event.code == 'Backspace') {
+        if(event == 'Backspace') {
             if(this.X == -1) return;
             document.querySelector(`td[data-x='${this.X}'][data-y='${this.Y}']`).innerHTML = '';
             this.X--;
