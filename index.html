@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WORDLY</title>
+    <title>WORDLE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 <body>
     <main>
         <div id="main-menu-container">
-            <h1>WORDLY</h1>
+            <h1>WORDLE</h1>
             <div id="buttons-main-menu">
                 <button id="start-game-button">Начать игру</button>
                 <button id="leader-board-button">Таблица лидеров</button>
@@ -57,38 +57,38 @@
         </div>
 
         <div id="game-container">
-            <h1>WORDLY</h1>
+            <h1>WORDLE</h1>
             <table id="game-field">
                 <tbody>
-                    <tr>
+                    <tr data-y="0">
                         <td data-y="0" data-x="0"></td>
                         <td data-y="0" data-x="1"></td>
                         <td data-y="0" data-x="2"></td>
                         <td data-y="0" data-x="3"></td>
                         <td data-y="0" data-x="4"></td>
                     </tr>
-                    <tr>
+                    <tr data-y="1">
                         <td data-y="1" data-x="0"></td>
                         <td data-y="1" data-x="1"></td>
                         <td data-y="1" data-x="2"></td>
                         <td data-y="1" data-x="3"></td>
                         <td data-y="1" data-x="4"></td>
                     </tr>
-                    <tr>
+                    <tr data-y="2">
                         <td data-y="2" data-x="0"></td>
                         <td data-y="2" data-x="1"></td>
                         <td data-y="2" data-x="2"></td>
                         <td data-y="2" data-x="3"></td>
                         <td data-y="2" data-x="4"></td>
                     </tr>
-                    <tr>
+                    <tr data-y="3">
                         <td data-y="3" data-x="0"></td>
                         <td data-y="3" data-x="1"></td>
                         <td data-y="3" data-x="2"></td>
                         <td data-y="3" data-x="3"></td>
                         <td data-y="3" data-x="4"></td>
                     </tr>
-                    <tr>
+                    <tr data-y="4">
                         <td data-y="4" data-x="0"></td>
                         <td data-y="4" data-x="1"></td>
                         <td data-y="4" data-x="2"></td>
@@ -98,41 +98,41 @@
                 </tbody>
             </table>
             <div id="keyboard">
-                <button data-value=""> А </button>
-                <button data-value=""> Б </button>
-                <button data-value=""> В </button>
-                <button data-value=""> Г </button>
-                <button data-value=""> Д </button>
-                <button data-value=""> Е </button>
-                <button data-value=""> Ё</button>
-                <button data-value=""> Ж </button>
-                <button data-value=""> З </button>
-                <button data-value=""> И </button>
-                <button data-value=""> Й </button>
-                <button data-value=""> К </button>
-                <button data-value=""> Л </button>
-                <button data-value=""> М </button>
-                <button data-value=""> Н </button>
-                <button data-value=""> О </button>
-                <button data-value=""> П </button>
-                <button data-value=""> Р </button>
-                <button data-value=""> С </button>
-                <button data-value=""> Т </button>
-                <button data-value=""> У </button>
-                <button data-value=""> Ф </button>
-                <button data-value=""> Х </button>
-                <button data-value=""> Ц </button>
-                <button id="delete-button" data-value=""><img src="images/delete-svgrepo-com.svg"></button>
-                <button data-value=""> Ч </button>
-                <button data-value=""> Ш </button>
-                <button data-value=""> Щ </button>
-                <button data-value=""> Ъ </button>
-                <button data-value=""> Ы </button>
-                <button data-value=""> ь </button>
-                <button data-value=""> Э </button>
-                <button data-value=""> Ю </button>
-                <button data-value=""> Я </button>
-                <button id="enter-button" data-value=""> ВВОД </button>
+                <button data-value="KeyF"> А </button>
+                <button data-value="KeyM"> Б </button>
+                <button data-value="KeyD"> В </button>
+                <button data-value="KeyU"> Г </button>
+                <button data-value="KeyL"> Д </button>
+                <button data-value="KeyT"> Е </button>
+                <button data-value="Backquote"> Ё</button>
+                <button data-value="Semicolon"> Ж </button>
+                <button data-value="KeyP"> З </button>
+                <button data-value="KeyB"> И </button>
+                <button data-value="KeyQ"> Й </button>
+                <button data-value="KeyR"> К </button>
+                <button data-value="KeyK"> Л </button>
+                <button data-value="KeyV"> М </button>
+                <button data-value="KeyY"> Н </button>
+                <button data-value="KeyJ"> О </button>
+                <button data-value="KeyG"> П </button>
+                <button data-value="KeyH"> Р </button>
+                <button data-value="KeyC"> С </button>
+                <button data-value="KeyN"> Т </button>
+                <button data-value="KeyE"> У </button>
+                <button data-value="KeyA"> Ф </button>
+                <button data-value="BracketLeft"> Х </button>
+                <button data-value="KeyW"> Ц </button>
+                <button id="delete-button" data-value="Backspace"><img src="images/delete-svgrepo-com.svg"></button>
+                <button data-value="KeyX"> Ч </button>
+                <button data-value="KeyI"> Ш </button>
+                <button data-value="KeyO"> Щ </button>
+                <button data-value="BracketRight"> Ъ </button>
+                <button data-value="KeyS"> Ы </button>
+                <button data-value="KeyM"> Ь </button>
+                <button data-value="Quote"> Э </button>
+                <button data-value="Period"> Ю </button>
+                <button data-value="KeyZSpace"> Я </button>
+                <button id="enter-button" data-value="Enter"> ВВОД </button>
             </div>
         </div>
 
