@@ -271,3 +271,36 @@ main {
     background: var(--purple-for-hovers);
     transform: translateY(-2px);
 }
+#alert-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 10px;
+    right: 10%;
+    gap: 10px;
+}
+.alert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--purple-for-containers);
+    border: 2px solid var(--purple-for-borders);
+    color: var(--red-for-errors);
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+.alert:hover {
+    background: var(--purple-for-hovers);
+}
+.remove {
+    animation: remove 300ms linear forwards;
+}
+@keyframes remove {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
